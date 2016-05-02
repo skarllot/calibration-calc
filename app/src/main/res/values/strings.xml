@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RangeCalc</string>
+    <string name="app_name">Calibration Calc</string>
     <string name="action_settings">Settings</string>
     <string name="lblValue1.text">Value 1:</string>
     <string name="lblValue2.text">Value 2:</string>

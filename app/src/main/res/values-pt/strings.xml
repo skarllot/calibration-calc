@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">RangeCalc</string>
+    <string name="app_name">Calculadora para Calibração</string>
     <string name="lblValue1.text">Valor 1:</string>
     <string name="lblValue2.text">Valor 2:</string>
     <string name="btnCalc.text">Calcular</string>

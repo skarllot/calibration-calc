@@ -18,6 +18,8 @@ import java.text.DecimalFormat;
 
 public class MainActivityActivity extends AppCompatActivity {
 
+    private static final int FRACTION_DIGITS = 4;
+
     private EditText txtValue1;
     private EditText txtValue2;
     private TextView lbl0Value;
@@ -92,9 +94,9 @@ public class MainActivityActivity extends AppCompatActivity {
             return;
         }
 
-        int iVal1, iVal2;
+        double iVal1, iVal2;
         try {
-            iVal1 = Integer.parseInt(value1);
+            iVal1 = Double.parseDouble(value1);
         } catch (NumberFormatException e) {
             Toast.makeText(MainActivityActivity.this,
                     R.string.err_invalid_value1, Toast.LENGTH_SHORT).show();
@@ -102,7 +104,7 @@ public class MainActivityActivity extends AppCompatActivity {
             return;
         }
         try {
-            iVal2 = Integer.parseInt(value2);
+            iVal2 = Double.parseDouble(value2);
         } catch (NumberFormatException e) {
             Toast.makeText(MainActivityActivity.this,
                     R.string.err_invalid_value2, Toast.LENGTH_SHORT).show();
@@ -110,7 +112,7 @@ public class MainActivityActivity extends AppCompatActivity {
             return;
         }
 
-        int max, min, range;
+        double max, min, range;
         if (iVal1 > iVal2) {
             max = iVal1;
             min = iVal2;
@@ -128,8 +130,8 @@ public class MainActivityActivity extends AppCompatActivity {
         p100 = max;
 
         DecimalFormat df = new DecimalFormat();
-        df.setMaximumFractionDigits(2);
-        df.setMinimumFractionDigits(2);
+        df.setMaximumFractionDigits(FRACTION_DIGITS);
+        df.setMinimumFractionDigits(FRACTION_DIGITS);
 
 
         lbl0Value.setText(df.format(p0));
