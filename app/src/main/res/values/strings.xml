@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RangeCalc</string>
+    <string name="action_settings">Settings</string>
+    <string name="lblValue1.text">Value 1:</string>
+    <string name="lblValue2.text">Value 2:</string>
+    <string name="btnCalc.text">Calculate</string>
+    <string name="err.empty.value1">Value 1 should not be empty</string>
+    <string name="err.empty.value2">Value 2 should not be empty</string>
+    <string name="err.invalid.value1">The value 1 is not a valid number</string>
+    <string name="err.invalid.value2">The value 2 is not a valid number</string>
+</resources>

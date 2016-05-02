@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RangeCalc</string>
+    <string name="lblValue1.text">Valor 1:</string>
+    <string name="lblValue2.text">Valor 2:</string>
+    <string name="btnCalc.text">Calcular</string>
+    <string name="action_settings">Configurações</string>
+    <string name="err.empty.value1">O valor 1 não pode ser vazio</string>
+    <string name="err.empty.value2">O valor 2 não pode ser vazio</string>
+    <string name="err.invalid.value1">O valor 1 não é um número válido</string>
+    <string name="err.invalid.value2">O valor 2 não é um número válido</string>
+</resources>
