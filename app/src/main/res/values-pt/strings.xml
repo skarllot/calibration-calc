@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Calculadora para Calibração</string>
-    <string name="lblValue1.text">Valor 1:</string>
-    <string name="lblValue2.text">Valor 2:</string>
     <string name="btnCalc.text">Calcular</string>
     <string name="action_settings">Configurações</string>
     <string name="err.empty.value1">O valor 1 não pode ser vazio</string>
     <string name="err.empty.value2">O valor 2 não pode ser vazio</string>
     <string name="err.invalid.value1">O valor 1 não é um número válido</string>
     <string name="err.invalid.value2">O valor 2 não é um número válido</string>
+    <string name="lblRangeTitle.text">Range</string>
+    <string name="lblValueTitle.text">Valor</string>
+    <string name="txtValue1.hint">Valor 1</string>
+    <string name="txtValue2.hint">Valor 2</string>
+    <string name="btnClear1.contentDescription">Limpar conteúdo de valor 1</string>
+    <string name="btnClear2.contentDescription">Limpar conteúdo de valor 2</string>
+    <string name="lblRange0.text">0%</string>
+    <string name="lblRange100.text">100%</string>
+    <string name="lblRange25.text">25%</string>
+    <string name="lblRange50.text">50%</string>
+    <string name="lblRange75.text">75%</string>
 </resources>

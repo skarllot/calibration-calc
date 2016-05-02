@@ -1,11 +1,21 @@
 <resources>
     <string name="app_name">Calibration Calc</string>
     <string name="action_settings">Settings</string>
-    <string name="lblValue1.text">Value 1:</string>
-    <string name="lblValue2.text">Value 2:</string>
     <string name="btnCalc.text">Calculate</string>
     <string name="err.empty.value1">Value 1 should not be empty</string>
     <string name="err.empty.value2">Value 2 should not be empty</string>
     <string name="err.invalid.value1">The value 1 is not a valid number</string>
     <string name="err.invalid.value2">The value 2 is not a valid number</string>
+    <string name="label.text.zerovalue" translatable="false">0</string>
+    <string name="lblRangeTitle.text">Range</string>
+    <string name="lblValueTitle.text">Value</string>
+    <string name="txtValue1.hint">Value 1</string>
+    <string name="txtValue2.hint">Value 2</string>
+    <string name="btnClear1.contentDescription">Clear value 1 content</string>
+    <string name="btnClear2.contentDescription">Clear value 2 content</string>
+    <string name="lblRange0.text">0%</string>
+    <string name="lblRange25.text">25%</string>
+    <string name="lblRange50.text">50%</string>
+    <string name="lblRange75.text">75%</string>
+    <string name="lblRange100.text">100%</string>
 </resources>

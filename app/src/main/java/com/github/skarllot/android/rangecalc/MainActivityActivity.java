@@ -1,15 +1,13 @@
 package com.github.skarllot.android.rangecalc;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.inputmethod.InputMethodManager;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,18 +35,38 @@ public class MainActivityActivity extends AppCompatActivity {
 
         txtValue1 = (EditText) findViewById(R.id.txtValue1);
         txtValue2 = (EditText) findViewById(R.id.txtValue2);
-        lbl0Value = (TextView) findViewById(R.id.lbl0Value);
-        lbl25Value = (TextView) findViewById(R.id.lbl25Value);
-        lbl50Value = (TextView) findViewById(R.id.lbl50Value);
-        lbl75Value = (TextView) findViewById(R.id.lbl75Value);
-        lbl100Value = (TextView) findViewById(R.id.lbl100Value);
+        lbl0Value = (TextView) findViewById(R.id.lblValue0);
+        lbl25Value = (TextView) findViewById(R.id.lblValue25);
+        lbl50Value = (TextView) findViewById(R.id.lblValue50);
+        lbl75Value = (TextView) findViewById(R.id.lblValue75);
+        lbl100Value = (TextView) findViewById(R.id.lblValue100);
+
+        TextWatcher calculateOnChange = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                calculateRange();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        };
+
+        txtValue1.addTextChangedListener(calculateOnChange);
+        txtValue2.addTextChangedListener(calculateOnChange);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        //getMenuInflater().inflate(R.menu.menu_main, menu);
+        //return true;
+
+        return false;
     }
 
     @Override
@@ -79,19 +97,31 @@ public class MainActivityActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onCalculate(View view) {
+    public void onClearValue1(View view) {
+        txtValue1.setText("");
+        txtValue1.requestFocus();
+    }
+
+    public void onClearValue2(View view) {
+        txtValue2.setText("");
+        txtValue2.requestFocus();
+    }
+
+    public void calculateRange() {
         String value1 = txtValue1.getText().toString();
         String value2 = txtValue2.getText().toString();
 
-        if (value1.length() == 0) {
-            Toast.makeText(MainActivityActivity.this,
-                    R.string.err_empty_value1, Toast.LENGTH_SHORT).show();
-            return;
+        if (value1.length() == 0 ||
+                value1.equals("-") ||
+                value1.equals(".") ||
+                value1.equals(",")) {
+            value1 = "0";
         }
-        if (value2.length() == 0) {
-            Toast.makeText(MainActivityActivity.this,
-                    R.string.err_empty_value2, Toast.LENGTH_SHORT).show();
-            return;
+        if (value2.length() == 0 ||
+                value2.equals("-") ||
+                value2.equals(".") ||
+                value2.equals(",")) {
+            value2 = "0";
         }
 
         double iVal1, iVal2;
@@ -139,16 +169,5 @@ public class MainActivityActivity extends AppCompatActivity {
         lbl50Value.setText(df.format(p50));
         lbl75Value.setText(df.format(p75));
         lbl100Value.setText(df.format(p100));
-
-        View currentFocus = getCurrentFocus();
-        if (currentFocus != null) {
-            InputMethodManager imm = (InputMethodManager) getSystemService(
-                    Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
-
-        txtValue1.setText("");
-        txtValue2.setText("");
-        txtValue1.requestFocus();
     }
 }
