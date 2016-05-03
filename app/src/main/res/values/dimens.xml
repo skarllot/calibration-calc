@@ -5,4 +5,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="table_top_margin">16dp</dimen>
     <dimen name="cell_padding">2dp</dimen>
+    <dimen name="cell_paddingend_number">5dp</dimen>
 </resources>
